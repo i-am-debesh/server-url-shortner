@@ -2,7 +2,7 @@ import { Url } from "./model.js";
 
 function shortURL(generatedID) {
 
-    const customURL = `https://urlsh-z944.onrender.com/id?url=${generatedID}`;
+    const customURL = `https://d391.onrender.com/id?url=${generatedID}`;
 
     const localURL = `http://localhost:5000/id?url=${generatedID}`;
 
