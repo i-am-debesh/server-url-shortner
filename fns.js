@@ -33,4 +33,4 @@ async function getFullLink(id){
         return -1;
     }
 }
-export {shortURL, urlList, getUniqueID, getFullLink}
+export {shortURL, getUniqueID, getFullLink}
