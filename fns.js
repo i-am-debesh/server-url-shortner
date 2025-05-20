@@ -10,20 +10,29 @@ function shortURL(generatedID) {
 }
 
 async function getUniqueID() {
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let isUnique = false;
-    let code;
+    let code = '';
 
-    while(!isUnique) {
-        code = Math.floor(Math.random()*100)+1;
+    while (!isUnique) {
+        // Generate 3-character code : can generate upto 62^3 = 238,328 combinations
+        code = '';
+        for (let i = 0; i < 3; i++) {
+            code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
 
-        const existing = await Url.findOne({shortCode:code});
-
-        if(!existing) {
+        // Check if it already exists in the database
+        const existing = await Url.findOne({ shortCode: code });
+        if (!existing) {
             isUnique = true;
         }
     }
+
     return code;
 }
+
+
 
 async function getFullLink(id){
     const record = await Url.findOne({shortCode: id});
