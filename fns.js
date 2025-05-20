@@ -1,15 +1,12 @@
 import { Url } from "./model.js";
-let urlList = [
-    {
-        "id": '101',
-        "url": 'https://youtube.com'
-    }
-]
-
 
 function shortURL(generatedID) {
 
-    return `http://localhost:5000/id?url=${generatedID}`;
+    const customURL = `https://urlsh-z944.onrender.com/id?url=${generatedID}`;
+
+    const localURL = `http://localhost:5000/id?url=${generatedID}`;
+
+    return customURL;
 }
 
 async function getUniqueID() {
