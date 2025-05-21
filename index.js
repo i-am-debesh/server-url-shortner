@@ -24,8 +24,9 @@ app.get('/userurl', async (req,res)=>{
 
     const userUrl = req.query.url;
     const uniqueID = await getUniqueID();
-    await saveURL(uniqueID, userUrl);
+    
     const shorturl = shortURL(uniqueID);
+    await saveURL(uniqueID, userUrl, shorturl);
 
     res.json({shortUrl : shorturl});
 
