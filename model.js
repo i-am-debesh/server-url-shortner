@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const UrlSchema = new mongoose.Schema({
     shortCode: String,
     fullUrl: String,
-    shortUrl: PerformanceServerTiming
+    shortUrl: String
 });
 const Url = mongoose.model('Url', UrlSchema);
 
